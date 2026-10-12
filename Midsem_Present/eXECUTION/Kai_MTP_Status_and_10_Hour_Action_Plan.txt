@@ -1,0 +1,72 @@
+KAI MTP — VERIFIED STATUS AND 10-HOUR ACTION PLAN
+Prepared 11 October 2026
+Sources: uploaded Akash_Kit, SIGIR_Pack_Akash, Akash_Project_Guide, SIGIR_PACK_README, ANNOTATION_FINDINGS_AND_PRESENTATION_GUIDANCE, and executed bundle logs.
+
+IMPORTANT: This is a progress record, NOT a declaration that all project work is finished. Do not report mock predictions or historical laboratory studies as new student-system results.
+
+1. WHAT WE HAVE DONE (VERIFIED)
+- Both starter-package datasets and supplied scripts have been assembled from uploads in Kai_MTP_Execution_Package_UPDATED.zip.
+- NSCLC: selftest.py log reports 35 passed, 0 failed. (The guide mentions 36, but this supplied script logged 35.)
+- SIGIR: check_sigir_pack.py log reports 9 passed, 0 failed.
+- NSCLC dataset: 100 patient-trial pairs; 50 Eligible, 50 Not Eligible; 50 dev, 50 test; 223 reviewed criteria (85 inclusion, 138 exclusion); 2,230 pair-rule instances.
+- SIGIR dataset: 204 pairs, 14 patients, 204 trials; 100 Eligible, 104 Not Eligible; 102 dev, 102 test; 1,911 reviewed criteria (796 inclusion, 1,115 exclusion).
+- SIGIR simple count-the-rules baseline on DEVELOPMENT ONLY: rule-count threshold >8 predicts Not Eligible, 62/102 correct (60.78%), 18 wrongful exclusions and 22 wrongful inclusions. This is not a model result or held-out test result.
+- NSCLC and SIGIR development-only summary CSVs have been generated.
+- SIGIR mock plain-AI and mock forced-guess scripts were exercised to check output formatting and evaluation compatibility. Mock outputs are synthetic and MUST NOT be used as AI accuracy.
+- The uploaded NSCLC 446-row and SIGIR 203-row annotation sheets have unfilled truth fields; they are assignments, not completed human labels.
+
+2. WHAT HAS NOT BEEN DONE
+- Human annotation and adjudication: 446 NSCLC + 203 SIGIR criterion answers, evidence spans, UNSURE marking, labelcheck, final freeze/hash, shared-row agreement.
+- Real plain-AI and forced-guess runs using a local Ollama model, model provenance and prompt hashes.
+- Real rule-level accuracy against completed human annotations.
+- Six-check evidence verifier, flag quality, ablation studies.
+- Review-priority comparison at budgets 5, 10, 20, 50, 100 and rescued eligible pairs per 10 checks.
+- Hand-validated controlled traps (seven types), checker detection and error rates.
+- Repair vs deferral and correct-answers-broken analysis.
+- High-risk rejection ranking precision/recall at 3, 5, 10.
+- Frozen NSCLC and SIGIR test evaluations and validated transfer results.
+- Final slides based on new experimental findings.
+
+3. CAN WE FINISH IN 10 HOURS?
+We can produce a credible, demonstrable MIDSEM PROGRESS PACKAGE in ~10 focused hours IF local Ollama is installed and working. We cannot honestly guarantee completion of all eight research phases and 649 manual labels in ten hours. Prioritize demonstrable implementation and development-only measurements, not fake completeness. Schedule short breaks and rest; sacrificing sleep is not required to produce defensible evidence.
+
+4. TEN-HOUR PRIORITY SCHEDULE
+Hour 0–1: Extract updated ZIP. Verify paths and Python environment. Run selftest.py and check_sigir_pack.py; save dated stdout/stderr and versions. Keep test split untouched.
+Hour 1–2: Verify Ollama is installed, model downloaded, and local inference works. Record ollama --version, ollama list, model tag, hardware, runtime. If unavailable, document blocker; do not substitute mock results.
+Hour 2–4: Run real plain_ai.py on a SMALL, PRESPECIFIED DEV-ONLY subset first (e.g., two NSCLC development pairs), then expand as resources permit. Save raw JSONL, logs, call failures, model metadata. Run forced-guess on identical dev subset. DO NOT label mock scores as real.
+Hour 4–5: Run evaluate.py pairs on completed real dev outputs only; report eligible-positive TP/FP/TN/FN, accuracy, balanced accuracy, sensitivity, specificity, wrong exclusions, wrong inclusions and REVIEW. State denominators and selection of subset. No test results.
+Hour 5–6: Manually label a realistic small development subset independently, including exact quotes, basis and uncertainty; record which rows were completed. Run labelcheck where possible. Do not auto-fill human truth from AI predictions.
+Hour 6–7: Implement one small, testable evidence-checker prototype on dev outputs: exact/fuzzy quote presence and inclusion/exclusion mapping; document that this is a partial checker, NOT the full six-check method. Collect verified/flagged examples.
+Hour 7–8: Implement a transparent dev-only ranking prototype (e.g., citation-flag-first versus seeded random), inspect a small hand-labelled subset, and show a qualitative case with actual source evidence. Only calculate rescue metrics if enough gold data exist.
+Hour 8–9: Write a reproducibility report: methods, actual commands, real outputs, observed failures, limits, and planned K1–K8 work. Prepare result tables and an explicit 'not yet executed' column.
+Hour 9–10: Update PPT using actual logs and measured data. Practice explaining prior-lab versus student results, the 35/9 tests, the baseline, and the next experiments. Backup output files.
+
+5. COMMANDS TO RUN ON YOUR LINUX MACHINE
+cd /home/honcho/MTP/Akash_Kit/code
+python selftest.py
+python check_sigir_pack.py
+ollama --version
+ollama list
+# First test local Ollama; choose the model available on your machine.
+# Then consult plain_ai.py --help and SIGIR_PACK_README.md for exact --dataset, --corpus, --criteria, --splits, --model and --split dev arguments.
+# Use only development data until prompts/code/labels are frozen.
+
+6. SAFE MIDSEM PRESENTATION CLAIMS
+- 'We validated the supplied NSCLC and SIGIR starter kits; the uploaded scripts logged 35/35 and 9/9 checks passing.'
+- 'We verified dataset sizes and development/test separation.'
+- 'Our simple SIGIR development-only rule-count benchmark achieved 62/102 correct; this is a baseline, not our AI system.'
+- 'Historical lab studies motivate our checker, but their reported explanation precision and routing metrics are not our experimental results.'
+- 'The proposed checker, decision-impact ranking, trap evaluation, repair and transfer experiments remain work in progress.'
+
+7. OUTPUT LOCATIONS IN THE UPDATED ZIP
+Kai_MTP_Execution_Package/README_FIRST.md
+Kai_MTP_Execution_Package/outputs/logs/nsclc_selftest.log
+Kai_MTP_Execution_Package/outputs/logs/sigir_integrity.log
+Kai_MTP_Execution_Package/outputs/nsclc_*.csv
+Kai_MTP_Execution_Package/outputs/sigir_*.csv
+Kai_MTP_Execution_Package/outputs/sigir_rule_count_baseline_DEV_ONLY.json
+Kai_MTP_Execution_Package/outputs/sigir_mock_dev.jsonl (MOCK ONLY)
+Kai_MTP_Execution_Package/outputs/sigir_mock_forced_dev.jsonl (MOCK ONLY)
+
+8. COMPLETION CRITERIA
+Full project completion requires independent labels and quality checks, a documented frozen model/runtime, complete expected JSONL output without hidden failed calls, checker and ranking implementations, quantitative comparisons and ablations, validated traps and repair, and a single held-out test evaluation using correct NSCLC trial and SIGIR patient clustering. A successful starter-kit self-test is not equivalent to these deliverables.

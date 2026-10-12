@@ -1,0 +1,464 @@
+honcho@skyee:~$ ollama --version
+ollama list
+ollama version is 0.34.0
+NAME    ID    SIZE    MODIFIED 
+honcho@skyee:~$ cd code
+honcho@skyee:~/code$ cd /home/honcho/MTP/Akash_Kit/code
+
+python3 selftest.py
+python3 check_sigir_pack.py
+
+A module that was compiled using NumPy 1.x cannot be run in
+NumPy 2.2.6 as it may crash. To support both 1.x and 2.x
+versions of NumPy, modules must be compiled with NumPy 2.0.
+Some module may need to rebuild instead e.g. with 'pybind11>=2.12'.
+
+If you are a user of the module, the easiest solution will be to
+downgrade to 'numpy<2' or try to upgrade the affected module.
+We expect that some modules will need time to support NumPy 2.
+
+Traceback (most recent call last):  File "/home/honcho/MTP/Akash_Kit/code/selftest.py", line 19, in <module>
+    import pandas as pd
+  File "/home/honcho/.local/lib/python3.10/site-packages/pandas/__init__.py", line 49, in <module>
+    from pandas.core.api import (
+  File "/home/honcho/.local/lib/python3.10/site-packages/pandas/core/api.py", line 28, in <module>
+    from pandas.core.arrays import Categorical
+  File "/home/honcho/.local/lib/python3.10/site-packages/pandas/core/arrays/__init__.py", line 1, in <module>
+    from pandas.core.arrays.arrow import ArrowExtensionArray
+  File "/home/honcho/.local/lib/python3.10/site-packages/pandas/core/arrays/arrow/__init__.py", line 5, in <module>
+    from pandas.core.arrays.arrow.array import ArrowExtensionArray
+  File "/home/honcho/.local/lib/python3.10/site-packages/pandas/core/arrays/arrow/array.py", line 53, in <module>
+    from pandas.core import (
+  File "/home/honcho/.local/lib/python3.10/site-packages/pandas/core/ops/__init__.py", line 8, in <module>
+    from pandas.core.ops.array_ops import (
+  File "/home/honcho/.local/lib/python3.10/site-packages/pandas/core/ops/array_ops.py", line 56, in <module>
+    from pandas.core.computation import expressions
+  File "/home/honcho/.local/lib/python3.10/site-packages/pandas/core/computation/expressions.py", line 21, in <module>
+    from pandas.core.computation.check import NUMEXPR_INSTALLED
+  File "/home/honcho/.local/lib/python3.10/site-packages/pandas/core/computation/check.py", line 5, in <module>
+    ne = import_optional_dependency("numexpr", errors="warn")
+  File "/home/honcho/.local/lib/python3.10/site-packages/pandas/compat/_optional.py", line 135, in import_optional_dependency
+    module = importlib.import_module(name)
+  File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "/usr/lib/python3/dist-packages/numexpr/__init__.py", line 24, in <module>
+    from numexpr.interpreter import MAX_THREADS, use_vml, __BLOCK_SIZE1__
+AttributeError: _ARRAY_API not found
+
+A module that was compiled using NumPy 1.x cannot be run in
+NumPy 2.2.6 as it may crash. To support both 1.x and 2.x
+versions of NumPy, modules must be compiled with NumPy 2.0.
+Some module may need to rebuild instead e.g. with 'pybind11>=2.12'.
+
+If you are a user of the module, the easiest solution will be to
+downgrade to 'numpy<2' or try to upgrade the affected module.
+We expect that some modules will need time to support NumPy 2.
+
+Traceback (most recent call last):  File "/home/honcho/MTP/Akash_Kit/code/selftest.py", line 19, in <module>
+    import pandas as pd
+  File "/home/honcho/.local/lib/python3.10/site-packages/pandas/__init__.py", line 49, in <module>
+    from pandas.core.api import (
+  File "/home/honcho/.local/lib/python3.10/site-packages/pandas/core/api.py", line 28, in <module>
+    from pandas.core.arrays import Categorical
+  File "/home/honcho/.local/lib/python3.10/site-packages/pandas/core/arrays/__init__.py", line 1, in <module>
+    from pandas.core.arrays.arrow import ArrowExtensionArray
+  File "/home/honcho/.local/lib/python3.10/site-packages/pandas/core/arrays/arrow/__init__.py", line 5, in <module>
+    from pandas.core.arrays.arrow.array import ArrowExtensionArray
+  File "/home/honcho/.local/lib/python3.10/site-packages/pandas/core/arrays/arrow/array.py", line 67, in <module>
+    from pandas.core.arrays.masked import BaseMaskedArray
+  File "/home/honcho/.local/lib/python3.10/site-packages/pandas/core/arrays/masked.py", line 61, in <module>
+    from pandas.core import (
+  File "/home/honcho/.local/lib/python3.10/site-packages/pandas/core/nanops.py", line 52, in <module>
+    bn = import_optional_dependency("bottleneck", errors="warn")
+  File "/home/honcho/.local/lib/python3.10/site-packages/pandas/compat/_optional.py", line 135, in import_optional_dependency
+    module = importlib.import_module(name)
+  File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "/usr/lib/python3/dist-packages/bottleneck/__init__.py", line 2, in <module>
+    from .reduce import (
+AttributeError: _ARRAY_API not found
+
+1. Data files
+  PASS  lung-cancer set: 100 pairs, 10 trials x 10 patients, 5 Eligible per trial
+  PASS  criteria.csv: 223 reviewed rules for the 10 trials
+  PASS  2,230 rule answers in total (sum over the 100 pairs)
+  PASS  split by trial: dev = T01 T02 T03 T05 T09, test = the other 5
+  PASS  your label sheet: 20 pairs (2 per trial, 10 Eligible + 10 Not Eligible), 446 rule answers (dev 190, test 256)
+  PASS  your label sheet has no Eligible/Not Eligible column (label from the note alone)
+  PASS  practice sheet: pairs 0 and 2, 42 rule answers, not part of your label sheet
+
+2. Rule logic and the 'what could change the decision' tool
+  PASS  inclusion yes->met, no->not_met; exclusion yes->not_met, no->met; unknown->not_stated
+  PASS  decision: any not_met -> NOT_ELIGIBLE; all met -> ELIGIBLE; otherwise REVIEW
+  PASS  a single failing rule is the sole reason: flipping it makes the pair ELIGIBLE, flipping a passing rule changes nothing
+  PASS  with two failing rules, no single answer changes the decision
+  PASS  in a REVIEW decision, an unknown rule could change it (to NOT_ELIGIBLE if it fails)
+
+3. Statistics helpers
+  PASS  re-weighting to 10% eligible: forwarded precision 0.4 / 2.2
+  PASS  exact sign test: 8 wins vs 2 losses -> p = 0.109375
+  PASS  Holm correction on three p-values
+
+4. Pair-level scoring on made-up systems with known answers
+  PASS  'always unknown': every pair REVIEW, 0/50 wrongly excluded, strict accuracy 0.5
+  PASS  'everyone passes': all ELIGIBLE, 0 wrongly excluded, 50/50 wrongly included
+  PASS  'first rule fails', dev split: 50 pairs, 25/25 wrongly excluded, all by a single failing rule
+  PASS  re-weighting inside pair scoring: at 10% eligible, 'everyone passes' forwards 10% true matches
+  PASS  7 missing answers are counted and scored unknown, never dropped
+
+5. Agreement (Cohen's kappa)
+  PASS  kappa = 0.5 on the worked example (agreement 4/6, chance 1/3)
+  PASS  --overlap-only compares just the shared answers (4 here)
+
+6. Rule-level scoring
+  PASS  system identical to the labels: accuracy 1.0
+  PASS  10 wrong answers: accuracy exactly (n-10)/n
+
+7. Label check
+  PASS  an Eligible pair whose labels say NOT_ELIGIBLE is listed, and every Not Eligible pair whose labels say ELIGIBLE
+
+8. Evidence scoring
+  PASS  one real quote and one invented quote: found-verbatim rate 0.5
+
+9. Checker scoring
+  PASS  a checker that flags exactly the 10 wrong answers: precision 1.0, recall 1.0
+
+10. Targeted checking simulation
+  PASS  checking the 25 wrongly failed eligible pairs first rescues 10 after 10 checks, 25 after 25
+  PASS  checking ineligible pairs first rescues nothing (their effect is unknown without labels)
+
+11. Question-log summary
+  PASS  question log: 3 questions, 2 answered, both cases settled (after 1 and 2 questions), both match the full note
+
+12. Model client and plain-AI script (mock model - nothing is sent anywhere)
+  PASS  an unparseable answer is asked again once with a reminder, then accepted
+  PASS  plain_ai.py (mock): pairs 7 and 4 give 42 rule answers with the rule logic applied in code
+  PASS  its records can be scored (98 pairs had no answers and are counted as unknown)
+
+13. Refuses bad input
+  PASS  the same rule answer twice is refused
+  PASS  two systems in one file are refused
+  PASS  a run marked INCOMPLETE (failed model calls) is refused
+
+36 passed, 0 failed
+
+A module that was compiled using NumPy 1.x cannot be run in
+NumPy 2.2.6 as it may crash. To support both 1.x and 2.x
+versions of NumPy, modules must be compiled with NumPy 2.0.
+Some module may need to rebuild instead e.g. with 'pybind11>=2.12'.
+
+If you are a user of the module, the easiest solution will be to
+downgrade to 'numpy<2' or try to upgrade the affected module.
+We expect that some modules will need time to support NumPy 2.
+
+Traceback (most recent call last):  File "/home/honcho/MTP/Akash_Kit/code/check_sigir_pack.py", line 18, in <module>
+    import pandas as pd
+  File "/home/honcho/.local/lib/python3.10/site-packages/pandas/__init__.py", line 49, in <module>
+    from pandas.core.api import (
+  File "/home/honcho/.local/lib/python3.10/site-packages/pandas/core/api.py", line 28, in <module>
+    from pandas.core.arrays import Categorical
+  File "/home/honcho/.local/lib/python3.10/site-packages/pandas/core/arrays/__init__.py", line 1, in <module>
+    from pandas.core.arrays.arrow import ArrowExtensionArray
+  File "/home/honcho/.local/lib/python3.10/site-packages/pandas/core/arrays/arrow/__init__.py", line 5, in <module>
+    from pandas.core.arrays.arrow.array import ArrowExtensionArray
+  File "/home/honcho/.local/lib/python3.10/site-packages/pandas/core/arrays/arrow/array.py", line 53, in <module>
+    from pandas.core import (
+  File "/home/honcho/.local/lib/python3.10/site-packages/pandas/core/ops/__init__.py", line 8, in <module>
+    from pandas.core.ops.array_ops import (
+  File "/home/honcho/.local/lib/python3.10/site-packages/pandas/core/ops/array_ops.py", line 56, in <module>
+    from pandas.core.computation import expressions
+  File "/home/honcho/.local/lib/python3.10/site-packages/pandas/core/computation/expressions.py", line 21, in <module>
+    from pandas.core.computation.check import NUMEXPR_INSTALLED
+  File "/home/honcho/.local/lib/python3.10/site-packages/pandas/core/computation/check.py", line 5, in <module>
+    ne = import_optional_dependency("numexpr", errors="warn")
+  File "/home/honcho/.local/lib/python3.10/site-packages/pandas/compat/_optional.py", line 135, in import_optional_dependency
+    module = importlib.import_module(name)
+  File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "/usr/lib/python3/dist-packages/numexpr/__init__.py", line 24, in <module>
+    from numexpr.interpreter import MAX_THREADS, use_vml, __BLOCK_SIZE1__
+AttributeError: _ARRAY_API not found
+
+A module that was compiled using NumPy 1.x cannot be run in
+NumPy 2.2.6 as it may crash. To support both 1.x and 2.x
+versions of NumPy, modules must be compiled with NumPy 2.0.
+Some module may need to rebuild instead e.g. with 'pybind11>=2.12'.
+
+If you are a user of the module, the easiest solution will be to
+downgrade to 'numpy<2' or try to upgrade the affected module.
+We expect that some modules will need time to support NumPy 2.
+
+Traceback (most recent call last):  File "/home/honcho/MTP/Akash_Kit/code/check_sigir_pack.py", line 18, in <module>
+    import pandas as pd
+  File "/home/honcho/.local/lib/python3.10/site-packages/pandas/__init__.py", line 49, in <module>
+    from pandas.core.api import (
+  File "/home/honcho/.local/lib/python3.10/site-packages/pandas/core/api.py", line 28, in <module>
+    from pandas.core.arrays import Categorical
+  File "/home/honcho/.local/lib/python3.10/site-packages/pandas/core/arrays/__init__.py", line 1, in <module>
+    from pandas.core.arrays.arrow import ArrowExtensionArray
+  File "/home/honcho/.local/lib/python3.10/site-packages/pandas/core/arrays/arrow/__init__.py", line 5, in <module>
+    from pandas.core.arrays.arrow.array import ArrowExtensionArray
+  File "/home/honcho/.local/lib/python3.10/site-packages/pandas/core/arrays/arrow/array.py", line 67, in <module>
+    from pandas.core.arrays.masked import BaseMaskedArray
+  File "/home/honcho/.local/lib/python3.10/site-packages/pandas/core/arrays/masked.py", line 61, in <module>
+    from pandas.core import (
+  File "/home/honcho/.local/lib/python3.10/site-packages/pandas/core/nanops.py", line 52, in <module>
+    bn = import_optional_dependency("bottleneck", errors="warn")
+  File "/home/honcho/.local/lib/python3.10/site-packages/pandas/compat/_optional.py", line 135, in import_optional_dependency
+    module = importlib.import_module(name)
+  File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "/usr/lib/python3/dist-packages/bottleneck/__init__.py", line 2, in <module>
+    from .reduce import (
+AttributeError: _ARRAY_API not found
+
+SIGIR pack
+  PASS  sigir204.csv: 204 pairs, 14 patients, 204 trials, 100 Eligible  
+  PASS  criteria.csv: 1,911 reviewed rules, every trial has at least one inclusion rule  
+  PASS  n_rules column matches criteria.csv (for the count-the-rules baseline)  
+  PASS  split by patient: 7 dev + 7 test patients, 102 pairs each, no patient in both halves  
+  PASS  your SIGIR label sheet: 20 pairs (10 Eligible, 10 dev), one row per rule, no label column  
+  PASS  every row of the sheet matches criteria.csv  
+  PASS  plain_ai.py runs on SIGIR (mock model) and writes one record per rule  
+  PASS  pair scoring on SIGIR with a per-patient breakdown (dev: 102 pairs, 7 patients)  
+  PASS  'everyone passes' on SIGIR dev: no wrongful exclusions, all ineligible pairs wrongly included  
+
+9 passed, 0 failed
+honcho@skyee:~/MTP/Akash_Kit/code$ cd /home/honcho/MTP/Akash_Kit
+
+python3 -m venv --system-site-packages .venv
+source .venv/bin/activate
+
+python -m pip install --upgrade pip
+python -m pip install --upgrade --force-reinstall \
+  "numpy==1.26.4" "pandas==2.2.3" \
+  "numexpr>=2.10" "bottleneck>=1.4"
+Requirement already satisfied: pip in ./.venv/lib/python3.10/site-packages (22.0.2)
+Collecting pip
+  Downloading pip-26.2.1-py3-none-any.whl (1.8 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.8/1.8 MB 121.1 kB/s eta 0:00:00
+Installing collected packages: pip
+  Attempting uninstall: pip
+    Found existing installation: pip 22.0.2
+    Uninstalling pip-22.0.2:
+      Successfully uninstalled pip-22.0.2
+Successfully installed pip-26.2.1
+Collecting numpy==1.26.4
+  Using cached numpy-1.26.4-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (61 kB)
+Collecting pandas==2.2.3
+  Downloading pandas-2.2.3-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (89 kB)
+Collecting numexpr>=2.10
+  Downloading numexpr-2.14.1-cp310-cp310-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (9.0 kB)
+Collecting bottleneck>=1.4
+  Downloading bottleneck-1.6.0-cp310-cp310-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl.metadata (8.2 kB)
+Collecting python-dateutil>=2.8.2 (from pandas==2.2.3)
+  Using cached python_dateutil-2.9.0.post0-py2.py3-none-any.whl.metadata (8.4 kB)
+Collecting pytz>=2020.1 (from pandas==2.2.3)
+  Downloading pytz-2026.5-py2.py3-none-any.whl.metadata (22 kB)
+Collecting tzdata>=2022.7 (from pandas==2.2.3)
+  Downloading tzdata-2026.5-py2.py3-none-any.whl.metadata (1.4 kB)
+Collecting six>=1.5 (from python-dateutil>=2.8.2->pandas==2.2.3)
+  Using cached six-1.17.0-py2.py3-none-any.whl.metadata (1.7 kB)
+Using cached numpy-1.26.4-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (18.2 MB)
+Downloading pandas-2.2.3-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (13.1 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 13.1/13.1 MB 46.3 kB/s  0:04:17
+Downloading numexpr-2.14.1-cp310-cp310-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (440 kB)
+Downloading bottleneck-1.6.0-cp310-cp310-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl (371 kB)
+Using cached python_dateutil-2.9.0.post0-py2.py3-none-any.whl (229 kB)
+Downloading pytz-2026.5-py2.py3-none-any.whl (506 kB)
+Using cached six-1.17.0-py2.py3-none-any.whl (11 kB)
+Downloading tzdata-2026.5-py2.py3-none-any.whl (347 kB)
+Installing collected packages: pytz, tzdata, six, numpy, python-dateutil, numexpr, bottleneck, pandas
+  Attempting uninstall: pytz
+    Found existing installation: pytz 2022.1
+    Not uninstalling pytz at /usr/lib/python3/dist-packages, outside environment /home/honcho/MTP/Akash_Kit/.venv
+    Can't uninstall 'pytz'. No files were found to uninstall.
+  Attempting uninstall: tzdata
+    Found existing installation: tzdata 2025.2
+    Not uninstalling tzdata at /home/honcho/.local/lib/python3.10/site-packages, outside environment /home/honcho/MTP/Akash_Kit/.venv
+    Can't uninstall 'tzdata'. No files were found to uninstall.
+  Attempting uninstall: six
+    Found existing installation: six 1.16.0
+    Not uninstalling six at /usr/lib/python3/dist-packages, outside environment /home/honcho/MTP/Akash_Kit/.venv
+    Can't uninstall 'six'. No files were found to uninstall.
+  Attempting uninstall: numpy
+    Found existing installation: numpy 2.2.6
+    Not uninstalling numpy at /home/honcho/.local/lib/python3.10/site-packages, outside environment /home/honcho/MTP/Akash_Kit/.venv
+    Can't uninstall 'numpy'. No files were found to uninstall.
+  Attempting uninstall: python-dateutil
+    Found existing installation: python-dateutil 2.9.0.post0
+    Not uninstalling python-dateutil at /home/honcho/.local/lib/python3.10/site-packages, outside environment /home/honcho/MTP/Akash_Kit/.venv
+    Can't uninstall 'python-dateutil'. No files were found to uninstall.
+  Attempting uninstall: numexpr
+    Found existing installation: numexpr 2.8.1
+    Not uninstalling numexpr at /usr/lib/python3/dist-packages, outside environment /home/honcho/MTP/Akash_Kit/.venv
+    Can't uninstall 'numexpr'. No files were found to uninstall.
+  Attempting uninstall: bottleneck
+    Found existing installation: Bottleneck 1.3.2
+    Not uninstalling bottleneck at /usr/lib/python3/dist-packages, outside environment /home/honcho/MTP/Akash_Kit/.venv
+    Can't uninstall 'Bottleneck'. No files were found to uninstall.
+  Attempting uninstall: pandas
+    Found existing installation: pandas 2.3.3
+    Not uninstalling pandas at /home/honcho/.local/lib/python3.10/site-packages, outside environment /home/honcho/MTP/Akash_Kit/.venv
+    Can't uninstall 'pandas'. No files were found to uninstall.
+ERROR: pip's dependency resolver does not currently take into account all the packages that are installed. This behaviour is the source of the following dependency conflicts.
+imgaug 0.4.0 requires opencv-python, which is not installed.
+layoutparser 0.3.4 requires opencv-python, which is not installed.
+llama-index-core 0.14.21 requires setuptools>=80.9.0, but you have setuptools 59.6.0 which is incompatible.
+opencv-python-headless 4.12.0.88 requires numpy<2.3.0,>=2; python_version >= "3.9", but you have numpy 1.26.4 which is incompatible.
+pix2tex 0.1.4 requires timm==0.5.4, but you have timm 1.0.26 which is incompatible.
+Successfully installed bottleneck-1.6.0 numexpr-2.14.1 numpy-1.26.4 pandas-2.2.3 python-dateutil-2.9.0.post0 pytz-2026.5 six-1.17.0 tzdata-2026.5
+(.venv) honcho@skyee:~/MTP/Akash_Kit$ ollama pull qwen2.5:7b
+pulling manifest 
+pulling 2bada8a74506: 100% ▕██████████████████████████████████████████ ▏ 4.7 GB/4.7 GB  7.6 MB/s      0s
+verifying sha256 digest 
+writing manifest 
+success 
+(.venv) honcho@skyee:~/MTP/Akash_Kit$ ollama run qwen2.5:7b "Reply with exactly READY"
+READY
+
+(.venv) honcho@skyee:~/MTP/Akash_Kit$ cd /home/honcho/MTP/Akash_Kit
+source .venv/bin/activate
+
+python -c "import numpy,pandas; print('NumPy:',numpy.__version__); print('Pandas:',pandas.__version__)"
+
+cd code
+python selftest.py
+python check_sigir_pack.py
+NumPy: 1.26.4
+Pandas: 2.2.3
+
+1. Data files
+  PASS  lung-cancer set: 100 pairs, 10 trials x 10 patients, 5 Eligible per trial
+  PASS  criteria.csv: 223 reviewed rules for the 10 trials
+  PASS  2,230 rule answers in total (sum over the 100 pairs)
+  PASS  split by trial: dev = T01 T02 T03 T05 T09, test = the other 5
+  PASS  your label sheet: 20 pairs (2 per trial, 10 Eligible + 10 Not Eligible), 446 rule answers (dev 190, test 256)
+  PASS  your label sheet has no Eligible/Not Eligible column (label from the note alone)
+  PASS  practice sheet: pairs 0 and 2, 42 rule answers, not part of your label sheet
+
+2. Rule logic and the 'what could change the decision' tool
+  PASS  inclusion yes->met, no->not_met; exclusion yes->not_met, no->met; unknown->not_stated
+  PASS  decision: any not_met -> NOT_ELIGIBLE; all met -> ELIGIBLE; otherwise REVIEW
+  PASS  a single failing rule is the sole reason: flipping it makes the pair ELIGIBLE, flipping a passing rule changes nothing
+  PASS  with two failing rules, no single answer changes the decision
+  PASS  in a REVIEW decision, an unknown rule could change it (to NOT_ELIGIBLE if it fails)
+
+3. Statistics helpers
+  PASS  re-weighting to 10% eligible: forwarded precision 0.4 / 2.2
+  PASS  exact sign test: 8 wins vs 2 losses -> p = 0.109375
+  PASS  Holm correction on three p-values
+
+4. Pair-level scoring on made-up systems with known answers
+  PASS  'always unknown': every pair REVIEW, 0/50 wrongly excluded, strict accuracy 0.5
+  PASS  'everyone passes': all ELIGIBLE, 0 wrongly excluded, 50/50 wrongly included
+  PASS  'first rule fails', dev split: 50 pairs, 25/25 wrongly excluded, all by a single failing rule
+  PASS  re-weighting inside pair scoring: at 10% eligible, 'everyone passes' forwards 10% true matches
+  PASS  7 missing answers are counted and scored unknown, never dropped
+
+5. Agreement (Cohen's kappa)
+  PASS  kappa = 0.5 on the worked example (agreement 4/6, chance 1/3)
+  PASS  --overlap-only compares just the shared answers (4 here)
+
+6. Rule-level scoring
+  PASS  system identical to the labels: accuracy 1.0
+  PASS  10 wrong answers: accuracy exactly (n-10)/n
+
+7. Label check
+  PASS  an Eligible pair whose labels say NOT_ELIGIBLE is listed, and every Not Eligible pair whose labels say ELIGIBLE
+
+8. Evidence scoring
+  PASS  one real quote and one invented quote: found-verbatim rate 0.5
+
+9. Checker scoring
+  PASS  a checker that flags exactly the 10 wrong answers: precision 1.0, recall 1.0
+
+10. Targeted checking simulation
+  PASS  checking the 25 wrongly failed eligible pairs first rescues 10 after 10 checks, 25 after 25
+  PASS  checking ineligible pairs first rescues nothing (their effect is unknown without labels)
+
+11. Question-log summary
+  PASS  question log: 3 questions, 2 answered, both cases settled (after 1 and 2 questions), both match the full note
+
+12. Model client and plain-AI script (mock model - nothing is sent anywhere)
+  PASS  an unparseable answer is asked again once with a reminder, then accepted
+  PASS  plain_ai.py (mock): pairs 7 and 4 give 42 rule answers with the rule logic applied in code
+  PASS  its records can be scored (98 pairs had no answers and are counted as unknown)
+
+13. Refuses bad input
+  PASS  the same rule answer twice is refused
+  PASS  two systems in one file are refused
+  PASS  a run marked INCOMPLETE (failed model calls) is refused
+
+36 passed, 0 failed
+
+SIGIR pack
+  PASS  sigir204.csv: 204 pairs, 14 patients, 204 trials, 100 Eligible  
+  PASS  criteria.csv: 1,911 reviewed rules, every trial has at least one inclusion rule  
+  PASS  n_rules column matches criteria.csv (for the count-the-rules baseline)  
+  PASS  split by patient: 7 dev + 7 test patients, 102 pairs each, no patient in both halves  
+  PASS  your SIGIR label sheet: 20 pairs (10 Eligible, 10 dev), one row per rule, no label column  
+  PASS  every row of the sheet matches criteria.csv  
+  PASS  plain_ai.py runs on SIGIR (mock model) and writes one record per rule  
+  PASS  pair scoring on SIGIR with a per-patient breakdown (dev: 102 pairs, 7 patients)  
+  PASS  'everyone passes' on SIGIR dev: no wrongful exclusions, all ineligible pairs wrongly included  
+
+9 passed, 0 failed
+(.venv) honcho@skyee:~/MTP/Akash_Kit/code$ python plain_ai.py --help
+usage: plain_ai.py [-h] --model MODEL [--split {dev,test,all}] [--pairs PAIRS] [--cases CASES]
+                   [--dataset DATASET] [--corpus CORPUS] [--criteria CRITERIA] [--splits SPLITS]
+                   [--no-unknown] [--out OUT] [--cache-dir CACHE_DIR] [--num-ctx NUM_CTX] [--dry-run]
+
+plain_ai.py - the PLAIN-AI comparison system.
+
+One local-model call per (patient-trial pair, rule): the whole note plus one rule. The model says
+whether the rule's condition is true for the patient (yes / no / unknown) and quotes the note.
+Inclusion/exclusion logic is then applied in code (criteria.map_truth).
+
+This is the system you compare your own work against. Run it yourself, on your own computer.
+
+Usage (from the code/ folder)
+  python plain_ai.py --model qwen2.5:7b --split dev --dry-run          # print one prompt, call nothing
+  python plain_ai.py --model qwen2.5:7b --pairs 7,4                     # two pairs, quick check
+  python plain_ai.py --model qwen2.5:7b --split dev                     # the 50 development pairs
+  python plain_ai.py --model qwen2.5:7b --split dev --no-unknown        # the "forced guess" variant
+  python plain_ai.py --model qwen2.5:7b --split dev --dataset sigir204 --corpus ../datasets/sigir204/sigir204.csv       --criteria ../datasets/sigir204/criteria.csv --splits ../datasets/sigir204/splits.csv     # SIGIR
+  python plain_ai.py --model qwen2.5:7b --cases ../outputs/my_cases.jsonl --dataset trap_set
+      # altered notes: one JSON per line {"case_idx", "trial_id", "note", "crit_idx" (optional), ...}
+
+Output: one decision record per line (templates/decision_record.schema.json), default
+  ../outputs/plain_ai[_forced]_<model>[_<dataset>]_<split>.jsonl   (dataset shown when it is not nsclc100)
+If any model call fails for good, the file is still written, a <file>.INCOMPLETE marker is created,
+and the script exits with code 2. Do not evaluate an INCOMPLETE run.
+
+options:
+  -h, --help            show this help message and exit
+  --model MODEL         Ollama model tag, e.g. qwen2.5:7b
+  --split {dev,test,all}
+  --pairs PAIRS         comma-separated pair_idx values (overrides --split)
+  --cases CASES         JSONL of altered notes (overrides --split and --pairs)
+  --dataset DATASET     value written in each record's 'dataset' field
+  --corpus CORPUS
+  --criteria CRITERIA
+  --splits SPLITS
+  --no-unknown          forced-guess variant: the model may not say unknown
+  --out OUT
+  --cache-dir CACHE_DIR
+  --num-ctx NUM_CTX
+  --dry-run             print the first prompt and stop
+(.venv) honcho@skyee:~/MTP/Akash_Kit/code$ cd /home/honcho/MTP/Akash_Kit
+source .venv/bin/activate
+cd code
+
+python -u plain_ai.py \
+  --model qwen2.5:7b \
+  --pairs 7,4 \
+  --num-ctx 2048 \
+  --out ../outputs/pilot_nsclc_qwen7b.jsonl \
+  2>&1 | tee ../outputs/pilot_nsclc_qwen7b.log
+plain_ai_qwen2.5-7b: 2 notes, 42 rule questions -> ../outputs/pilot_nsclc_qwen7b.jsonl
+^Z
+[1]+  Stopped                 python -u plain_ai.py --model qwen2.5:7b --pairs 7,4 --num-ctx 2048 --out ../outputs/pilot_nsclc_qwen7b.jsonl 2>&1 | tee ../outputs/pilot_nsclc_qwen7b.log
+(.venv) honcho@skyee:~/MTP/Akash_Kit/code$ 
+
+
